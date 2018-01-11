@@ -2,7 +2,7 @@
 
 This is the public repo for students who wish to contribute solutions and examples to lessons from [Learn JavaScript with Zell](https://learnjavascript.today/).
 
-If you need assistance in regards to this repo, you can contact me: [stephen.e.chiang@gmail.com](mailto:stephen.e.chiang@gmail.com) -or- @Stephen on Zell's Slack channel.
+If you need assistance in regards to this repo or want to be added on the contributor's list, you can contact me: [stephen.e.chiang@gmail.com](mailto:stephen.e.chiang@gmail.com) -or- @Stephen on Zell's Slack channel.
 
 ## Rules and procedure for contributing
 
