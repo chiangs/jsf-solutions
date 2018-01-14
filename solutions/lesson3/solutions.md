@@ -7,28 +7,39 @@
 ## Question Number / Name
 
 ## 08. Changing Attributes / Exercise
-```
+
+* HTML
+```html
 <div class="clown-hat" data-color="red" data-num-stripes="3">A Clown hat</div>
+```
 
-    <script>
-        // Set an attribute with Element.setAttribute 
-        const getClown = document.querySelector(".clown-hat");
-        getClown.setAttribute('data-awesomeness', true);
+* Set an attribute with Element.setAttribute
 
-        // Get an attribute with Element.getAttribute
-        const getAwesome = getClown.getAttribute('data-awesomeness');
-        console.log(title = "data-awesomeness:", getAwesome);
+```js
+const getClown = document.querySelector(".clown-hat");
+getClown.setAttribute('data-awesomeness', true);
+```
 
-        // Get an attribute with Element.dataset
-        const getNumStripes = getClown.dataset.numStripes;
-        console.log(title="data-num-stripes:", getNumStripes);
+* Get an attribute with Element.getAttribute
+```js
+const getAwesome = getClown.getAttribute('data-awesomeness');
+console.log(title = "data-awesomeness:", getAwesome);
+```
 
-        // Set an attribute with Element.dataset
-        getClown.dataset.hatSize="huge";
+* Get an attribute with Element.dataset
+```js
+const getNumStripes = getClown.dataset.numStripes;
+console.log(title="data-num-stripes:", getNumStripes);
+```
 
-        // Remove attribute with Element.removeAttribute
-        getClown.removeAttribute('data-awesomeness');
-    </script>
+* Set an attribute with Element.dataset
+```js
+getClown.dataset.hatSize="huge";
+```
+
+* Remove attribute with Element.removeAttribute
+```js
+getClown.removeAttribute('data-awesomeness');  
 ```
 
 <!-- Solutions above only -->
