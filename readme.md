@@ -23,8 +23,8 @@ The following information should be included as a minimum.
 
 ## Contents and navigation
 
-1. [Lesson 1](solutions/lesson1/solutions.md) - No exercices
-2. [Lesson 2](solutions/lesson2/solutions.md)
+1. [Lesson 1](solutions/lesson1/solutions.md) - No exercises
+2. [Lesson 2](solutions/lesson2/solutions.md) - Complete
 3. [Lesson 3](solutions/lesson3/solutions.md)
 4. [Lesson 4](solutions/lesson4/solutions.md)
 5. [Lesson 5](solutions/lesson5/solutions.md)
