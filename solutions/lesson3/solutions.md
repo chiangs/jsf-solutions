@@ -8,6 +8,7 @@
   - [3.2 Selecting an element](#32-selecting-an-element)
   - [3.3 Changing style](#33-changing-style)
   - [3.4 Array.forEach](#34-arrayforeach)
+  - [3.5 Selecting multiple elements](#35-selecting-multiple-elements)
   - [3.8 Changing Attributes / Exercise](#38-changing-attributes-exercise)
   - [End of document](#end-of-document)
 
@@ -53,14 +54,14 @@ const lukeElement = starWarsElement.querySelect('.character')
   _by attribute:_
 
 ```js
-const yodaElement = characterElements.querySelector('[master]')
+const yodaElement = starWarsElement.querySelector('[data-type="master"]')
 ```
 
 * **The Darth Vader element**
   _by attribute:_
 
 ```js
-const darthElement = starWarsElement.querySelect('[villain]')
+const darthElement = starWarsElement.querySelect('[data-type="villain"]')
 ```
 
 ## 3.3 Changing style
@@ -155,7 +156,7 @@ people.forEach(person => firstNames[people.indexOf(person)] = person.firstName)
 // perform the iteration and check and don't forget to increment the counter at the end
 let after1950 = []
 let counter = 0
-people.forEach(function(person) {
+people.forEach(person => {
   if (person.yearOfDeath > 1950) {
     after1950[counter] = person
     counter++
@@ -168,6 +169,52 @@ people.forEach(function(person) {
 ```js
 // Use findIndex and match on last name
 people.findIndex(person => person.lastName === 'Darwin')
+```
+
+## 3.5 Selecting multiple elements
+
+[Back to top](#lesson-3-solutions)
+
+```html
+<div id="star-wars">
+  <div class="character" data-type="hero">Luke Skywalker</div>
+  <div class="character" data-type="master">Yoda</div>
+  <div class="character" data-type="villain">Darth Vader</div>
+</div>
+```
+
+_Try the following while using querySelectorAll:_
+
+* **Change fontSize of all characters to 2em**
+
+```js
+const container = document.querySelector('#star-wars')
+const characters = container.querySelectorAll('.character')
+characters.forEach(element => element.style.fontSize = '2em')
+```
+
+* **Change Luke's text to white and backgroundColor to black**
+
+```js
+const luke = document.querySelectorAll('[data-type="hero"]')
+luke.forEach(element => {
+  element.style.color = 'white'
+  element.style.backgroundColor = 'black'
+})
+```
+
+* **Change Yoda's text to green.**
+
+```js
+const yoda = document.querySelectorAll('[data-type="master"]')
+yoda.forEach(element => element.style.color = 'green')
+```
+
+* **Change Darth Vader's text to red.**
+
+```js
+const vader = document.querySelectorAll('[data-type="villain"]')
+vader.forEach(element => element.style.color = 'red')
 ```
 
 ## 3.8 Changing Attributes / Exercise
