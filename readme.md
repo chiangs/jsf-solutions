@@ -34,6 +34,6 @@ The following information should be included as a minimum.
 
 ## Contributors
 
-Lesson 2: (@chiangs)[https://github.com/chiangs]
-Lesson 3.2 - 3.7: (@chiangs)[https://github.com/chiangs]
-Lesson 3.8: (@mindmergedegisn)[https://github.com/mindmergedesign]
+* Lesson 2: (@chiangs)[https://github.com/chiangs]
+* Lesson 3.2 - 3.7: (@chiangs)[https://github.com/chiangs]
+* Lesson 3.8: (@mindmergedegisn)[https://github.com/mindmergedesign]
