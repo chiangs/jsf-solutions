@@ -6,7 +6,7 @@
 
 * [Lesson 3](#lesson-3)
   * [3.2 Selecting an element](#32-selecting-an-element)
-  * [3.8 Changing style](#38-changing-style)
+  * [3.3 Changing style](#33-changing-style)
   * [3.8 Changing Attributes / Exercise](#38-changing-attributes--exercise)
   * [End of document](#end-of-document)
 
@@ -57,7 +57,7 @@ const yodaElement = characterElements.querySelector('.character')
 const darthElement = starWarsElement.querySelect('[villain]')
 ```
 
-## 3.8 Changing style
+## 3.3 Changing style
 
 [Back to top](#lesson-3-solutions)
 
