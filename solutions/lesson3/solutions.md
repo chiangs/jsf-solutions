@@ -42,12 +42,17 @@ const starWarsElement = document.querySelector('#star-wars')
 const lukeElement = starWarsElement.querySelector('div')
 ```
 
-* **The Yoda element**
-  _by class:_
+_by class:_
 
 ```js
-// how is this possible if it only matches the first element and there's no unique tag?
-const yodaElement = characterElements.querySelector('.character')
+const lukeElement = starWarsElement.querySelect('.character')
+```
+
+* **The Yoda element**
+  _by attribute:_
+
+```js
+const yodaElement = characterElements.querySelector('[master]')
 ```
 
 * **The Darth Vader element**
