@@ -1,14 +1,15 @@
-# Lesson 3
+# Lesson 3 Solutions
 
 [Previous Lesson](../lesson2/solutions.md)
 
 <!-- TOC -->
 
-* [Lesson 3](#lesson-3)
-  * [3.2 Selecting an element](#32-selecting-an-element)
-  * [3.3 Changing style](#33-changing-style)
-  * [3.8 Changing Attributes / Exercise](#38-changing-attributes--exercise)
-  * [End of document](#end-of-document)
+- [Lesson 3 Solutions](#lesson-3-solutions)
+  - [3.2 Selecting an element](#32-selecting-an-element)
+  - [3.3 Changing style](#33-changing-style)
+  - [3.4 Array.forEach](#34-arrayforeach)
+  - [3.8 Changing Attributes / Exercise](#38-changing-attributes-exercise)
+  - [End of document](#end-of-document)
 
 <!-- /TOC -->
 
@@ -117,6 +118,56 @@ const fontWeight = (pandaCub.style.fontWeight = 'bold')
 
 // get from inlineStyles
 inlineStyles.fontWeight // bold or 700
+```
+
+## 3.4 Array.forEach
+
+[Back to top](#lesson-3-solutions)
+
+* **console.log the first name of each person in the array.**
+
+```js
+// People is an array of objects, or persons
+// Call the forEach method on the people array
+// for each item in the arry, that is now named person,
+// print first name of the person
+people.forEach(person => console.log(person.firstName))
+```
+
+* **Make a second array that contains only the first name of each person.**
+
+```js
+// For each person, copy the firstName property of the object into a new array
+// To do this, we need to copy the firstname and move up an index in the new array 
+// for the next person. Since we are copying from an array (people) we just use 
+// that original person's index using indexOf as a reference. 
+let firstNames = []
+people.forEach(person => firstNames[people.indexOf(person)] = person.firstName)
+```
+
+* **Make a third array that contains people that have died after 1950.**
+
+```js
+// For each person, check the yearOfDeath property
+// if > 1950 then copy the person object to the new array
+// to do this, create a new array, after1950
+// we'll need a counter to keep increment the index of the new array being added to
+// perform the iteration and check and don't forget to increment the counter at the end
+let after1950 = []
+let counter = 0
+people.forEach(function(person) {
+  if (person.yearOfDeath > 1950) {
+    after1950[counter] = person
+    counter++
+  }
+}) // 6 person objects
+```
+
+* **Find index of Charles Darwin in the array.**
+
+```js
+// Use findIndex and match on last name
+people.findIndex(person => person.lastName === 'Darwin')
 ```
 
 ## 3.8 Changing Attributes / Exercise
