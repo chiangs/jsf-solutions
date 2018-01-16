@@ -9,7 +9,9 @@
   - [3.3 Changing style](#33-changing-style)
   - [3.4 Array.forEach](#34-arrayforeach)
   - [3.5 Selecting multiple elements](#35-selecting-multiple-elements)
+  - [3.7 Changing classes](#37-changing-classes)
   - [3.8 Changing Attributes / Exercise](#38-changing-attributes-exercise)
+  - [3.9 DOM traversals](#39-dom-traversals)
   - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -217,6 +219,39 @@ const vader = document.querySelectorAll('[data-type="villain"]')
 vader.forEach(element => element.style.color = 'red')
 ```
 
+## 3.7 Changing classes
+
+[Back to top](#lesson-3-solutions)
+
+```html
+<ul class="superheroes">
+  <li>Wonderwoman</li>
+  <li>Superman</li>
+  <li>Ironman</li>
+  <li>Batman</li>
+  <li>The Flash</li>
+  <li></li>
+</ul>
+```
+
+_Try adding a class of superhero to each hero in following HTML with querySelectorAll, forEach and classList.add._
+
+```js
+// select the container not required, but useful to be specific
+const container = document.querySelector('.superheroes')
+
+// select all superheroes
+const superheroes = container.querySelectorAll('li')
+
+// add class using forEach, but only if that hero is named
+// so the last <li></li> won't get the class
+superheroes.forEach(hero =>{
+  if (hero.innerText != '') {
+    hero.classList.add('superhero')
+  }
+})
+```
+
 ## 3.8 Changing Attributes / Exercise
 
 [Back to top](#lesson-3-solutions)
@@ -258,6 +293,90 @@ getClown.dataset.hatSize = 'huge'
 
 ```js
 getClown.removeAttribute('data-awesomeness')
+```
+
+## 3.9 DOM traversals
+
+[Back to top](#lesson-3-solutions)
+
+```html
+<div class="characters">
+  <ul class="hobbits">
+    <li>Frodo Baggins</li>
+    <li>Samwise "Sam" Gamgee</li>
+    <li>Meriadoc "Merry" Brandybuck</li>
+    <li>Peregrin "Pippin" Took</li>
+    <li>Bilbo Baggins</li>
+  </ul>
+  <ul class="humans">
+    <li>Gandalf</li>
+    <li>Saruman</li>
+    <li>Aragorn</li>
+    <li>Boromir</li>
+    <li>Faramir</li>
+  </ul>
+  <ul class="elves">
+    <li>Legolas</li>
+    <li>Glorfindel</li>
+    <li>Elrond</li>
+    <li>Arwen Evenstar</li>
+  </ul>
+  <ul class="enemies">
+    <li>Sauron</li>
+    <li>Nazgûl</li>
+  </ul>
+</div>
+```
+
+* **Select .characters with document.querySelector**
+```js
+// select the list's container
+const characters = document.querySelector('.characters')
+```
+
+* **Select .humans from .characters**
+```js
+// select the humans list from the container
+const humans = characters.querySelector('.humans')
+```
+
+* **Select all humans with querySelectorAll, starting from .humans**
+```js
+// from the humans list select all of it's list items
+humans.querySelectorAll('li')
+```
+
+* **Select all hobbits with children**
+```js
+// select the hobbits list
+const hobbits = characters.querySelector('.hobbits')
+const hobbitItems = hobbits.children
+```
+
+* **Select the Merry (the hobbit)**
+```js
+const merry = hobbits.children[2]
+```
+
+* **Select .enemies from Sauron**
+```js
+
+```
+
+* **Select the .characters div from Nazgûl**
+```js
+```
+
+* **Select Elrond from Glorfindel**
+```js
+```
+
+* **Select Legolas from Glorfindel**
+```js
+```
+
+* **Select Arwen from Glorfindel**
+```js
 ```
 
 <!-- Solutions above only -->

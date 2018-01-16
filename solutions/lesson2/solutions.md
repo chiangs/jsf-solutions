@@ -5,16 +5,16 @@
 <!-- TOC -->
 
 - [Lesson 2 Solutions](#lesson-2-solutions)
-    - [2.7 Functions](#27-functions)
-    - [2.8 Arrow Functions](#28-arrow-functions)
-    - [2.9 Scopes & Closures](#29-scopes-closures)
-    - [2.10 Intro to objects](#210-intro-to-objects)
-    - [2.11 Arrays](#211-arrays)
-    - [2.12 If/Else Statements](#212-ifelse-statements)
-    - [2.13 &&, || and !](#213-and)
-    - [2.15 For loops](#215-for-loops)
-    - [2.16 Debugging errors](#216-debugging-errors)
-    - [End of document](#end-of-document)
+  - [2.7 Functions](#27-functions)
+  - [2.8 Arrow Functions](#28-arrow-functions)
+  - [2.9 Scopes & Closures](#29-scopes-closures)
+  - [2.10 Intro to objects](#210-intro-to-objects)
+  - [2.11 Arrays](#211-arrays)
+  - [2.12 If/Else Statements](#212-ifelse-statements)
+  - [2.13 &&, || and !](#213-and)
+  - [2.15 For loops](#215-for-loops)
+  - [2.16 Debugging errors](#216-debugging-errors)
+  - [End of document](#end-of-document)
 
 <!-- /TOC -->
 
@@ -222,34 +222,34 @@ const anObject = {
 * **Make a property for your object with the dot notation. Give it a value**
 
 ```js
-const myMac = {
+// Starting from an empty object
+const myMac = {}
+
+// Add various properties
+myMac.make = 'Apple' 
+myMac.model = 'MacBook Pro'
+myMac.opSys = 'OS X'
+myMac.year = 2017
+myMac.screenSize = 15
+
+// creates myMac object
+myMac = {
   make: 'Apple',
-  model: 'Macbook Pro',
+  model: 'MacBook Pro',
+  opSys: 'OS X',
   year: 2017,
-  trim: 'touchbar',
   screenSize: 15
 }
-
-const screenSize = myMac.screenSize // using dot notation to set a reference to a particular object property
-
-console.log(screenSize) // prints out 15
 ```
 
 * **Make a property for your object with the bracket notation. Give it a value**
 
 ```js
 // my object
-const myMac = {
-  make: 'Apple',
-  model: 'Macbook Pro',
-  year: 2017,
-  trim: 'touchbar',
-  screenSize: 15
-  // below creates hardDrive: '1TB'
-}
+m
 
 // create a property and set the value using bracket notation
-myMac[hardDrive] = '1TB'
+myMac['hardDrive'] = '1TB'
 
 // using dot notation(preferred)
 myMac.hardDrive = '1TB'
@@ -290,26 +290,32 @@ myMac['model'] = theValueToSet
 * **Make a method. Call this method**
 
 ```js
-const myObject = {
-  size: 20,
-  shape: 'sphere',
-  weight: 25,
-  color: 'red'
-}
+// Printer method defined
+myMac.printer = Object.keys(myMac).forEach(key => {
+  console.log(myMac[key]);
+});
 
-const objectColor = myObject.color
-
-console.log(objectColor) // red
+// Calling the method
+myMac.printer
 ```
 
 * **Make a method that takes in an argument. Call this method**
 
 ```js
-// using the same object above myObject
-// implicit return the objects property set by the argument
-const objectMethod = argument => myObject[argument]
+// Printer method defined that takes any obj
+// runs through the obj to find it's key, value pairs to print
+const printer = function (obj) {
+ const keys = Object.keys(obj)
+ keys.forEach(key => 
+  console.log(‘Property=’ + key + ' Value=' + obj[key]))
+}
 
-console.log(objectMethod('color')) // red
+// object property set to the method
+myMac.print = printer
+
+// object calls the method on itself as the argument
+// but could take another obj instead
+myMac.print(this)
 ```
 
 ## 2.11 Arrays
