@@ -245,7 +245,7 @@ const superheroes = container.querySelectorAll('li')
 
 // add class using forEach, but only if that hero is named
 // so the last <li></li> won't get the class
-superheroes.forEach(hero =>{
+superheroes.forEach(hero => {
   if (hero.innerText != '') {
     hero.classList.add('superhero')
   }
@@ -360,23 +360,56 @@ const merry = hobbits.children[2]
 
 * **Select .enemies from Sauron**
 ```js
+// select all character by li tag
+const characters = document.querySelectorAll('li')
 
+// select Sauron
+const sauron = characters[14]
+
+// select the parentElement
+const enemies = sauron.parentElement 
+
+// select by closest tag
+const enemies = sauron.closest('ul')
+
+// select by closest class
+const enemies = sauron.closest('.enemies')
 ```
 
 * **Select the .characters div from Nazgûl**
 ```js
+const characters = document.querySelectorAll('li')
+
+const nazgul = characters[15]
+
+const charactersDiv = nazgul.closest('.characters')
 ```
 
 * **Select Elrond from Glorfindel**
 ```js
+const characters = document.querySelectorAll('li')
+
+const glorfindel = characters[11]
+
+const elrond = glorfindel.nextElementSibling
 ```
 
 * **Select Legolas from Glorfindel**
 ```js
+const characters = document.querySelectorAll('li')
+
+const glorfindel = characters[11]
+
+const legolas = glorfindel.previousElementSibling
 ```
 
 * **Select Arwen from Glorfindel**
 ```js
+const characters = document.querySelectorAll('li')
+
+const glorfindel = characters[11]
+
+const arwen = glorfindel.parentElement.children[3]
 ```
 
 <!-- Solutions above only -->
