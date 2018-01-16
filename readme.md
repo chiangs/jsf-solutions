@@ -34,8 +34,10 @@ The following information should be included as a minimum.
 
 ## Contributors
 
-| Lesson / Section(s) | Contributor(s)                                         |
-| ------------------- | ------------------------------------------------------ |
-| Lesson 2            | [@chiangs](https://github.com/chiangs)                 |
-| Lesson 3.2 - 3.7    | [@chiangs](https://github.com/chiangs)                 |
-| Lesson 3.8          | [@mindmergedegisn](https://github.com/mindmergedesign) |
+| Lesson / Section(s) | Contributor(s)                                                                   |
+| ------------------- | -------------------------------------------------------------------------------- |
+| Lesson 2.7 - 2.9    | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 2.10         | [@chiangs](https://github.com/chiangs), [@lampyr69](https://github.com/lampyr69) |
+| Lesson 2.11 - 2.16  | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 3.2 - 3.7    | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 3.8          | [@mindmergedegisn](https://github.com/mindmergedesign)                           |

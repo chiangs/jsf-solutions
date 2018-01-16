@@ -245,9 +245,7 @@ myMac = {
 * **Make a property for your object with the bracket notation. Give it a value**
 
 ```js
-// my object
-m
-
+// using the myMac obj
 // create a property and set the value using bracket notation
 myMac['hardDrive'] = '1TB'
 
