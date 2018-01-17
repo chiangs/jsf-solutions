@@ -6,6 +6,8 @@
 - [Lesson 4 Solutions](#lesson-4-solutions)
     - [4.1 Events in JavaScript](#41-events-in-javascript)
     - [4.2 The listening element](#42-the-listening-element)
+    - [4.3 Remove event listeners](#43-remove-event-listeners)
+- [4.4 Default actions](#44-default-actions)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -95,6 +97,54 @@ button.addEventListener('click', event => console.log(event.currentTarget))
 ```js
 okey dokey artichokey
 ```
+
+## 4.3 Remove event listeners
+
+[Back to top](#lesson-4-solutions)
+
+* **Add a click event listener.**
+
+```js
+// select the button
+const button = document.querySelector('button')
+
+// add event listener
+const clickCallBack = () => console.log('clicked')
+button.addEventListener('click', clickCallBack)
+```
+
+* **Remove the event listener you've added.**
+
+```js
+button.removeEventListener('click', clickCallBack)
+```
+
+* **Create an event listener that only listens for five clicks.**
+
+```js
+// select button
+const button = document.querySelector('button')
+
+// create counter variable
+// set callback that increments button clicks and does something
+let counter = 0
+
+const clickCallBack = e => {
+    counter ++
+    console.log('clicked')
+    if (counter > 4) {
+        e.currentTarget.removeEventListener('click', clickCallBack)
+    }
+}
+
+// add event listener
+button.addEventListener('click', clickCallBack)
+```
+
+# 4.4 Default actions
+
+[Back to top](#lesson-4-solutions)
+
 
 <!-- Solutions above only -->
 
