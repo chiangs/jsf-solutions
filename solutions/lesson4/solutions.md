@@ -75,16 +75,25 @@ button.addEventListener('click', () =>
 * **Get the listening element with this.**
 
 ```js
+// select button
+const button = document.querySelector('button')
+
+// event listener
+button.addEventListener('click', function(){
+    console.log(this)
+})
 ```
 
 * **Get the listening element with Event.currentTarget.**
 
 ```js
+button.addEventListener('click', event => console.log(event.currentTarget))
 ```
 
 * **Read the lesson on arrow functions. We'll use arrow functions from the next lesson onwards.**
 
 ```js
+okey dokey artichokey
 ```
 
 <!-- Solutions above only -->
