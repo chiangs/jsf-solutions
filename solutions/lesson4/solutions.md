@@ -7,7 +7,7 @@
     - [4.1 Events in JavaScript](#41-events-in-javascript)
     - [4.2 The listening element](#42-the-listening-element)
     - [4.3 Remove event listeners](#43-remove-event-listeners)
-- [4.4 Default actions](#44-default-actions)
+    - [4.4 Default actions](#44-default-actions)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -141,7 +141,7 @@ const clickCallBack = e => {
 button.addEventListener('click', clickCallBack)
 ```
 
-# 4.4 Default actions
+## 4.4 Default actions
 
 [Back to top](#lesson-4-solutions)
 
