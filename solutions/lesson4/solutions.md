@@ -8,6 +8,7 @@
     - [4.2 The listening element](#42-the-listening-element)
     - [4.3 Remove event listeners](#43-remove-event-listeners)
     - [4.4 Default actions](#44-default-actions)
+    - [4.5 Event propogation](#45-event-propogation)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -142,6 +143,42 @@ button.addEventListener('click', clickCallBack)
 ```
 
 ## 4.4 Default actions
+
+[Back to top](#lesson-4-solutions)
+
+* **Try adding event.preventDefault to a link, a checkbox and a submit button. Watch what happens when you trigger the event after doing so. (Hint: Nothing should happen).**
+
+_First, check the default operations happen, i.e., checkbox makes a check on click_
+
+```html
+<!-- link -->
+<a href="https://github.com/chiangs" target="_blank">@Chiangs</a>
+
+<!-- checkbox -->
+<input type="checkbox">
+
+<!-- button -->
+<button type="submit">Button</button>
+```
+
+```js
+// link
+// select the link
+const link = document.querySelector('a')
+
+// add event listener with preventDefault
+link.addEventListener('click', e => e.preventDefault()) // click does not open link
+
+// checkbox
+const checkbox = document.querySelector('input')
+checkbox.addEventListener('click', e => e.preventDefault()) // click does not check
+
+// button
+const button = document.querySelector('button')
+button.addEventListener('click', e => e.preventDefault()) // does not submit
+```
+
+## 4.5 Event propogation
 
 [Back to top](#lesson-4-solutions)
 
