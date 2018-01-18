@@ -126,20 +126,47 @@ button.removeEventListener('click', clickCallBack)
 // select button
 const button = document.querySelector('button')
 
-// create counter variable
-// set callback that increments button clicks and does something
+// Create counter variable
+// Set callback that increments button clicks and does something
+// Note that the counter version of this solution only works 
+// when you need it once
+// Please see the next version where you set a custom attribute
+// for a more reusable version
 let counter = 0
 
 const clickCallBack = e => {
-    counter ++
     console.log('clicked')
+    counter ++
     if (counter > 4) {
         e.currentTarget.removeEventListener('click', clickCallBack)
     }
 }
 
+// Setting a custom attribute version
+const clickCallBack = e => {
+    // log the click
+    console.log('clicked')
+    // assign to variables for easier use
+    // parse the attribute from string to a number
+    let element = e.currentTarget
+    let clickCount = parseInt(element.getAttribute('data-click-count'))
+    
+    // if no data-click-count exists initially, clickCount will be NaN which is falsey
+    // if it doesn't exit, set it to first click
+    // if it exists then increment by 1
+    !clickCount ? element.setAttribute('data-click-count', 1) : element.setAttribute('data-click-count', clickCount + 1)
+    
+    // check the current clickCount and if at threshold then remove listener
+    // else just return the original element aka do nothing
+    clickCount >= 4 ? element.removeEventListener('click', clickCallBack) : element
+}
+
 // add event listener
 button.addEventListener('click', clickCallBack)
+
+// final result is
+click (5)
+<button data-click-count="5">
 ```
 
 ## 4.4 Default actions
