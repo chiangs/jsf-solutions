@@ -9,6 +9,7 @@
     - [4.3 Remove event listeners](#43-remove-event-listeners)
     - [4.4 Default actions](#44-default-actions)
     - [4.5 Event propogation](#45-event-propogation)
+    - [4.6 Event delegation](#46-event-delegation)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -209,6 +210,68 @@ button.addEventListener('click', e => e.preventDefault()) // does not submit
 
 [Back to top](#lesson-4-solutions)
 
+* **Try adding an event listener in the capturing phase**
+
+```js
+// In the capturing phase, only listeners with useCapture set to true/false will fire. It is set as the optional boolean third argument.
+Element.addEventListener('click', () => console.log('clicked'), true)
+```
+
+* **Try adding an event listener in the bubbling phase**
+
+```js
+// In bubbling phase, only listeners without useCapture set to true
+// will fire
+Element.addEventListener('click', () => console.log('clicked))
+```
+
+* **Which phase comes first? The capturing phase or the bubbling phase?**
+
+_Capturing phase_
+
+* **What event listeners are fired in the capturing phase?**
+
+_Event listeners with useCapture flag set_
+
+* **What event listeners are fired in the target phase?**
+
+_All event listeners_
+
+* **What event listeners are fired in the bubbling phase?**
+
+_Only event listeners without the useCapture flag_
+
+## 4.6 Event delegation
+
+[Back to top](#lesson-4-solutions)
+
+* **Here's a list of famous people. Create an event listener that uses the event delegation pattern. Log the li element of the person you've clicked into the console.**
+
+```html
+<ul>
+  <li><a href="#">Benjamin Franklin</a></li>
+  <li><a href="#">Thomas Edison</a></li>
+  <li><a href="#">Franklin Roosevelt</a></li>
+  <li><a href="#">Napolean Bonaparte</a></li>
+  <li><a href="#">Abraham Lincoln</a></li>
+</ul>
+```
+
+```js
+// Select the list first
+const ul = document.querySelector('ul')
+
+// Add the event listener
+// Search for the closest li, which is the parentElement of the a 
+// tag. Because 'e' is the event object, you'll need the e.target 
+// which is the actual element clicked on, then it's closest.
+ul.addEventListener('click', e => {
+    const li = e.target.closest('li')
+    if (li) {
+        console.log(li)
+    }
+})
+```
 
 <!-- Solutions above only -->
 
