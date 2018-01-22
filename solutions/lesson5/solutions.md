@@ -103,6 +103,32 @@ modalClosers.forEach(item => {
 
 ## 5.7 Accordion starter
 
+```js
+// Add the css for the button and content on the is-open class
+// Using the event delegation method where an event listener
+// is placed on the accordion-container and open and closes
+// the portion of the accordion that matches the item (accordionHeader) passed
+// to the listener.
+
+// Add the js classes to the container and headers
+// accordion-container === jsAccordionContainer
+// accordion-header === jsAccordionHeader
+
+// select the container
+const accordion = document.querySelector('.jsAccordionContainer');
+
+// add the event listener
+// select the header by getting the next parent up that has the right class from
+// whatever was clicked.
+// If it matches as a header, toggle the is-open class on the parent, which is the accordion-container
+accordion.addEventListener('click', e => {
+  const accordionHeader = e.target.closest('.jsAccordionHeader');
+  if (accordionHeader) {
+    accordionHeader.parentNode.classList.toggle('is-open');
+  }
+});
+```
+
 [Back to top](#lesson-5-solutions)
 
 <!-- Solutions above only -->
