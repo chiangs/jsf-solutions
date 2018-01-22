@@ -206,6 +206,16 @@ const button = document.querySelector('button')
 button.addEventListener('click', e => e.preventDefault()) // does not submit
 ```
 
+or preventing the elements in one step using 'forEach'
+
+```js
+const elementsToPreventDefault = [link, checkBox, submit]
+
+elementsToPreventDefault.forEach(element => {
+  element.addEventListener('click', elem => elem.preventDefault())
+})
+```
+
 ## 4.5 Event propogation
 
 [Back to top](#lesson-4-solutions)
