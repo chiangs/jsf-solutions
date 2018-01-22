@@ -204,13 +204,12 @@ checkbox.addEventListener('click', e => e.preventDefault()) // click does not ch
 // button
 const button = document.querySelector('button')
 button.addEventListener('click', e => e.preventDefault()) // does not submit
-```
 
-Grouping elements into an array, e.g. the above three that should be 'preventDefault', helps structuring the code. It's then possible to apply the behaviour `preventDefault()` in a single step when adding the event listener by using forEach on the newly created array.
-
-```js
-// optionally, you can preventDefault on elements at the same time by grouping them 
-// into an array and using forEach to add the event listener.
+// Grouping elements into an array, e.g. the above three that 
+// should be 'preventDefault', helps structuring the code. It's 
+// then possible to apply the behaviour `preventDefault()` in a 
+// single step when adding the event listener by using forEach on 
+// the newly created array.
 const elementsToPreventDefault = [link, checkBox, submit]
 
 elementsToPreventDefault.forEach(element => {
