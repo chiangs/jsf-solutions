@@ -41,3 +41,5 @@ The following information should be included as a minimum.
 | Lesson 2.11 - 2.16  | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 3.2 - 3.7    | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 3.8          | [@mindmergedesign](https://github.com/mindmergedesign)                           |
+| Lesson 4            | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 4.4          | [@chiangs](https://github.com/chiangs), [@lampyr69](https://github.com/lampyr69) |
