@@ -4,11 +4,13 @@
 <!-- TOC -->
 
 - [Lesson 5 Solutions](#lesson-5-solutions)
-    - [5.2 Getting an element's position on screen](#52-getting-an-elements-position-on-screen)
-    - [5.5 Off-canvas starter](#55-off-canvas-starter)
-    - [5.6 Modal window starter](#56-modal-window-starter)
-    - [5.7 Accordion starter](#57-accordion-starter)
-    - [End of document](#end-of-document)
+  - [5.2 Getting an element's position on screen](#52-getting-an-elements-position-on-screen)
+  - [5.5 Off-canvas starter](#55-off-canvas-starter)
+  - [5.6 Modal window starter](#56-modal-window-starter)
+  - [5.7 Accordion starter](#57-accordion-starter)
+  - [5.8 Tabs starter](#58-tabs-starter)
+  - [5.9 Carousel starter](#59-carousel-starter)
+  - [End of document](#end-of-document)
 
 <!-- /TOC -->
 <!-- Solutions below only -->
@@ -103,6 +105,8 @@ modalClosers.forEach(item => {
 
 ## 5.7 Accordion starter
 
+[Back to top](#lesson-5-solutions)
+
 ```js
 // Add the css for the button and content on the is-open class
 // Using the event delegation method where an event listener
@@ -130,6 +134,140 @@ accordion.addEventListener('click', e => {
 ```
 
 [Back to top](#lesson-5-solutions)
+
+## 5.8 Tabs starter
+
+[Back to top](#lesson-5-solutions)
+
+## 5.9 Carousel starter
+
+[Back to top](#lesson-5-solutions)
+
+***This version is a slightly more advanced version than what the starter exercise calls for***
+
+Instead of deactivating the buttons once you reach the end of the carousel, it allows for an infinite scroll. Additionally, many of the common functions shared between the event listeners were refactored into their own functions that could be called by the event listener, rather than being defined in the event listener each time.
+
+```js
+// Declare common variables you'll need for event listeners
+// Select the track, buttons, dots, slides
+// Convert slides and dots into arrays to assist you in selecting them individually later
+// Get the width of one slide stored for later use
+// Set the is-selected class to a variable as you'll need it many times
+const track = document.querySelector('.jsTrack');
+const nextButton = document.querySelector('.jsNextButton');
+const prevButton = document.querySelector('.jsPrevButton');
+const dotsContainer = document.querySelector('.jsDotContainer');
+const slides = Array.from(track.children);
+const dots = Array.from(dotsContainer.children);
+const rect = slides[0].getBoundingClientRect();
+const slideWidth = rect.width;
+const isSelectedClass = 'is-selected';
+
+// apply the left style to all slides in the slides array, this allows for
+// the slides array to grow (increase in number of slides) without having to
+// update this function
+slides.forEach(
+	(slide, index) => (slide.style.left = slideWidth * index + 'px')
+);
+
+// repeated or common functions in event listeners
+// get all elements passed in elementArray that contain the class name
+const getCurrent = (elementArray, className) =>
+	elementArray.find(element => element.classList.contains(className));
+
+// remove or add the class from the classList of the slide and dot element passed in
+const changeClass = (slide, dot, action, className) => {
+	if (action === 'remove') {
+		[slide, dot].forEach(element => element.classList.remove(className));
+	}
+	if (action === 'add') {
+		[slide, dot].forEach(element => element.classList.add(className));
+	}
+};
+
+// add the class name to the classList of the first or last child of the parentElement of the slide and dot passed in
+const addClassToChild = (slide, dot, child, className) => {
+	if (child === 'first') {
+		[slide, dot].forEach(element =>
+			element.parentElement.firstElementChild.classList.add(className)
+		);
+	}
+	if (child === 'last') {
+		[slide, dot].forEach(element =>
+			element.parentElement.lastElementChild.classList.add(className)
+		);
+	}
+};
+
+// amount to slide by getting the track and setting the left style to the amount passed in
+const slide = (track, amount) => (track.style.left = '-' + amount);
+
+// nextButton event listener
+// select the current slide and dot
+// remove the is-selected class
+// if there is no next sibling, then it is the last slide so it must go back to the first slide
+// and add the is-selected class to that slide
+// otherwise slide one over and add the is-selected class to that slide.
+nextButton.addEventListener('click', e => {
+	let currentSlide = getCurrent(slides, isSelectedClass);
+	let currentDot = getCurrent(dots, isSelectedClass);
+	changeClass(currentSlide, currentDot, 'remove', isSelectedClass);
+
+	!currentSlide.nextElementSibling
+		? (addClassToChild(currentSlide, currentDot, 'first', isSelectedClass),
+			(track.style.left = slides[0].style.left))
+		: ((nextSlide = currentSlide.nextElementSibling),
+			(nextDot = currentDot.nextElementSibling),
+			changeClass(nextSlide, nextDot, 'add', isSelectedClass),
+			(amountToMove = nextSlide.style.left),
+			slide(track, amountToMove));
+});
+
+// previousButton event listener
+// same as nextButton but in opposite direction
+// style.left is a string so it must be parsted into an in and made negative then
+// concatenated back into a string with 'px'
+// using slides[slides.length - 1] will always get the last slide and allows for
+// the number of slides to grow without having to change this logic.
+prevButton.addEventListener('click', e => {
+	let currentSlide = getCurrent(slides, isSelectedClass);
+	let currentDot = getCurrent(dots, isSelectedClass);
+	changeClass(currentSlide, currentDot, 'remove', isSelectedClass);
+
+	!currentSlide.previousElementSibling
+		? (addClassToChild(currentSlide, currentDot, 'last', isSelectedClass),
+			(track.style.left =
+				-1 * parseInt(slides[slides.length - 1].style.left) + 'px'))
+		: ((prevSlide = currentSlide.previousElementSibling),
+			(prevDot = currentDot.previousElementSibling),
+			changeClass(prevSlide, prevDot, 'add', isSelectedClass),
+			(amountToMove = prevSlide.style.left),
+			slide(track, amountToMove));
+});
+
+// dotButton event listener
+// get the current slide and dot, then remove the is-selected class
+// find the index of the clicked dot from the dot array and use that index
+// to match the slide at the same index of the slides array
+// then set the slide amount to that selected slide and update it with the
+// is-selected class
+dotsContainer.addEventListener('click', e => {
+	if (e.target.matches('button')) {
+		const clickedDot = e.target;
+		let currentSlide = getCurrent(slides, isSelectedClass);
+		let currentDot = getCurrent(dots, isSelectedClass);
+		changeClass(currentSlide, currentDot, 'remove', isSelectedClass);
+
+		let index = dots.indexOf(clickedDot);
+		const targetSlide = slides[index];
+		const amountToMove = targetSlide.style.left;
+		slide(track, amountToMove);
+		changeClass(targetSlide, clickedDot, 'add', isSelectedClass);
+	}
+});
+
+```
+
 
 <!-- Solutions above only -->
 
