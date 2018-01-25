@@ -147,6 +147,10 @@ people.forEach(person => console.log(person.firstName))
 let newArray = []
 people.forEach(person => firstNamnewArrayes[people.indexOf(person)] = person.firstName)
 
+// alternatively using concat
+let peopleFirstName = []
+people.forEach(person => peopleFirstName = peopleFirstName.concat(person.firstName))
+
 // alternatively just use the newArray's increasing length from each
 // iteration of adding a person
 people.forEach(person => newArray[newArray.length] = person.firstName)
@@ -166,6 +170,18 @@ people.forEach(person => {
     after1950[after1950.length] = person
   }
 }) // 6 person objects
+
+// alternatively using filter method
+const after1950 = people.filter(person => person.yearOfDeath > 1950)
+
+// alternatively using concat which requires to be reassigned to the 
+// variable because concat returns a new array
+let after1950 = []
+people.forEach(person => {
+  if (person.yearOfDeath > 1950) {
+    after1950 = after1950.concat(person)
+  }
+}) 
 ```
 
 * **Find index of Charles Darwin in the array.**
