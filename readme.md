@@ -27,7 +27,7 @@ The following information should be included as a minimum.
 2. [Lesson 2](solutions/lesson2/solutions.md) - Complete
 3. [Lesson 3](solutions/lesson3/solutions.md) - Complete
 4. [Lesson 4](solutions/lesson4/solutions.md) - Complete
-5. [Lesson 5](solutions/lesson5/solutions.md) - Practical exercises
+5. [Lesson 5](solutions/lesson5/solutions.md) - Complete
 6. [Lesson 6](solutions/lesson6/solutions.md)
 7. [Lesson 7](solutions/lesson7/solutions.md)
 8. [Lesson 8](solutions/lesson8/solutions.md)
