@@ -144,8 +144,12 @@ people.forEach(person => console.log(person.firstName))
 // To do this, we need to copy the firstname and move up an index in the new array 
 // for the next person. Since we are copying from an array (people) we just use 
 // that original person's index using indexOf as a reference. 
-let firstNames = []
-people.forEach(person => firstNames[people.indexOf(person)] = person.firstName)
+let newArray = []
+people.forEach(person => firstNamnewArrayes[people.indexOf(person)] = person.firstName)
+
+// alternatively just use the newArray's increasing length from each
+// iteration of adding a person
+people.forEach(person => newArray[newArray.length] = person.firstName)
 ```
 
 * **Make a third array that contains people that have died after 1950.**
@@ -154,14 +158,12 @@ people.forEach(person => firstNames[people.indexOf(person)] = person.firstName)
 // For each person, check the yearOfDeath property
 // if > 1950 then copy the person object to the new array
 // to do this, create a new array, after1950
-// we'll need a counter to keep increment the index of the new array being added to
-// perform the iteration and check and don't forget to increment the counter at the end
+// we can use the new array's length to increment the position as
+// you add a new person and the new array's length grows.
 let after1950 = []
-let counter = 0
 people.forEach(person => {
   if (person.yearOfDeath > 1950) {
-    after1950[counter] = person
-    counter++
+    after1950[after1950.length] = person
   }
 }) // 6 person objects
 ```
