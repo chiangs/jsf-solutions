@@ -5,8 +5,8 @@
 <!-- TOC -->
 
 - [Lesson 6 Solutions](#lesson-6-solutions)
-    - [6.1 CSS Transitions](#61-css-transitions)
-    - [End of document](#end-of-document)
+	- [6.1 CSS Transitions](#61-css-transitions)
+	- [End of document](#end-of-document)
 
 <!-- /TOC -->
 
@@ -153,6 +153,28 @@ goButton.addEventListener('click', () => {
 
 * ***Create a transition that uses the ease-out timing function when transitioning in and ease-in when transitioning out.***
 
+_button will ease-out transition to a new color and return to original state when mouseoff_
+```html
+<button class="btn">Hover over me!</button>
+```
+```css
+.btn {
+	border: 1px solid black;
+	background-color: #2962ff;
+	color: #fff;
+	font-weight: bold;
+	height: 50px;
+	width: 100px;
+	transition: background-color 1.5s ease-in;
+}
+
+.btn:hover {
+	background-color: #1de9b6;
+	transition-timing-function: ease-out;
+	transition: 0.5s ease-out;
+}
+
+```
 
 <!-- Solutions above only -->
 
