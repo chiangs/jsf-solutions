@@ -6,6 +6,7 @@
 
 - [Lesson 6 Solutions](#lesson-6-solutions)
 	- [6.1 CSS Transitions](#61-css-transitions)
+	- [6.2 CSS Animations](#62-css-animations)
 	- [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -15,7 +16,6 @@
 ## 6.1 CSS Transitions
 
 [Back to top](#lesson-6-solutions)
-
 
 * ***Change the opacity property of an element from 0.5 to 1 over 1.5 seconds when you hover on it.***
 ```html
@@ -173,8 +173,21 @@ _button will ease-out transition to a new color and return to original state whe
 	transition-timing-function: ease-out;
 	transition: 0.5s ease-out;
 }
-
 ```
+
+## 6.2 CSS Animations
+
+[Back to top](#lesson-6-solutions)
+
+* ***Create a @keyframes declaration and use the animation.***
+
+* ***Experiment with animation-direction. Try all four values and see how your animation-timing-function affects it.***
+
+* ***Pause and play your animation with CSS and JavaScript.***
+
+* ***Play around with animation-fill-mode and see if you can find a use for none, backwards and both. Let me know if you do. Otherwise, learn the forwards mode :)***
+
+* ***Try and create a more life-like heartbeat animation!***
 
 <!-- Solutions above only -->
 

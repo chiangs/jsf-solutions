@@ -1,10 +1,12 @@
-# Lesson 7
+# Lesson 7 Solutions
 
 [Previous Lesson](../lesson6/solutions.md)
 
 <!-- Solutions below only -->
 
 ## Question Number / Name
+
+[Back to top](#lesson-7-solutions)
 
 <!-- Solutions above only -->
 
