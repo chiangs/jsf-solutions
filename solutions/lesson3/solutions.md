@@ -187,8 +187,18 @@ people.forEach(person => {
 * **Find index of Charles Darwin in the array.**
 
 ```js
+// Using forEach which takes 3 args (current value, index, array)
+// in this case, we say that each item is an object named person.
+// if the object at each index position of the people array has a lastName
+// property that is the last name we are looking for, then print the index
+people.forEach((person, index) => {
+  if (people[index].lastName === 'Darwin')
+  console.log(index)
+}) // 8
+
 // Use findIndex and match on last name
 people.findIndex(person => person.lastName === 'Darwin')
+// 8
 ```
 
 ## 3.5 Selecting multiple elements
