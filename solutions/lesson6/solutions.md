@@ -7,6 +7,8 @@
 - [Lesson 6 Solutions](#lesson-6-solutions)
 	- [6.1 CSS Transitions](#61-css-transitions)
 	- [6.2 CSS Animations](#62-css-animations)
+	- [6.5 Greensock API](#65-greensock-api)
+	- [6.6 Animating the off-canvas menu](#66-animating-the-off-canvas-menu)
 	- [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -181,13 +183,197 @@ _button will ease-out transition to a new color and return to original state whe
 
 * ***Create a @keyframes declaration and use the animation.***
 
+_Animation is a purple rectangle the stretches horizontally then back to normal size and then stretches vertically and repeates_
+```html
+<div class="box animated"></div>
+```
+
+```css
+@keyframes myFirstAnimation {
+	0%,
+	100% {
+		transform: scaleX(1);
+	}
+
+	25% {
+		transform: scaleX(3);
+	}
+
+	50% {
+		transform: scaleX(1);
+	}
+
+	75% {
+		transform: scaleY(3);
+	}
+}
+
+.box {
+	border: 1px solid black;
+	background-color: blueviolet;
+	height: 50px;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.animated {
+	animation: myFirstAnimation 5s ease-in-out infinite alternate forwards running;
+}
+```
+
 * ***Experiment with animation-direction. Try all four values and see how your animation-timing-function affects it.***
 
+_normal: plays from beginning to end and starts over_
+
+_reverse: plays from end to beginning and starts from end again_
+
+_alternate and alternate-reverse: plays the animation then in opposite direction, so that you get the ends twice_
+
 * ***Pause and play your animation with CSS and JavaScript.***
+
+_using the same HTML and CSS in exercise 1..._
+```css
+.paused {
+	animation-play-state: paused;
+}
+
+/* pausing via pure css and hover event, will continue 
+when mouseoff */
+.box:hover {
+	animation-play-state: paused;
+}
+```
+
+```js
+const box = document.querySelector('.box')
+
+box.addEventListener('click', () => {
+	// toggle the animated class
+	box.classList.toggle('animated')
+	// or alternatively toggle a paused class
+	box.classList.toggle('paused')
+});
+```
 
 * ***Play around with animation-fill-mode and see if you can find a use for none, backwards and both. Let me know if you do. Otherwise, learn the forwards mode :)***
 
 * ***Try and create a more life-like heartbeat animation!***
+
+_Using the example HTML & CSS, modify the animation to match a heartbeat graph_
+
+```css
+@keyframes heartbeat {
+	0%,
+	50%,
+	80% {
+		transform: scale(1) rotate(-45deg);
+	}
+
+	35% {
+		transform: scale(1.1) rotate(-45deg);
+	}
+
+	65% {
+		transform: scale(1.5) rotate(-45deg);
+	}
+}
+```
+
+## 6.5 Greensock API
+
+[Back to top](#lesson-6-solutions)
+
+* ***Install GSAP into your project.***
+
+_To install GSAP in your project, you need to include the library before you include your JavaScript file._
+
+```js
+// Link to GSAP
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+// Your main JavaScript comes next
+<script src="js/main.js"></script>
+```
+
+* ***Create a tween that moves an object from 200px from the left to the right.***
+
+_A tween is a single movement in an animation. In GSAP, a tween has the following syntax: `TweenMax.method(element, duration, vars)`_
+
+```html
+<div class="box"></div>
+```
+
+```css
+.box {
+	border: 1px solid black;
+	background-color: #f50057;
+	width: 100px;
+	height: 100px;
+}
+```
+
+```js
+// select the box by class
+const box = document.querySelector('.box')
+// set the method `to` on the box element, pick any integer duration 
+// and the x distance
+TweenMax.to(box, 3, { x: 200 })
+```
+
+* ***Create a tween that moves an object 200px from the top to the bottom.***
+
+_Using the same box object..._
+
+```js
+TweenMax.to(box, 3, { y: 200 })
+```
+
+* ***Create a tween that turns an object invisible.***
+
+_Using the same box object..._
+
+```js
+TweenMax.to(box, 3, {opacity: 0})
+```
+
+* ***Chain five tweens with TimelineMax***'
+
+```js
+const box = document.querySelector('.box');
+const tl = new TimelineMax({});
+
+box.addEventListener('click', () => {
+	tl.from(box, 2, {
+		x: 200,
+		rotation: 720,
+		borderRadius: 50,
+		ease: 'Power1.easeOut'
+	});
+	tl.to(box, 2, {
+		y: 400,
+		ease: 'Bounce.easeOut'
+	});
+	tl.to(box, 1, {
+		borderRadius: 0,
+		x: 350,
+		ease: 'Power2.easeIn'
+	});
+	tl.to(box, 1, {
+		rotation: 90,
+		transformOrigin: 'right bottom',
+		ease: 'Power2.easeIn'
+	});
+	tl.to(box, 3, {
+		y: -300,
+		borderRadius: 50,
+		ease: 'Bounce.easeOut'
+	});
+});
+```
+
+## 6.6 Animating the off-canvas menu
+
+[Back to top](#lesson-6-solutions)
 
 <!-- Solutions above only -->
 
