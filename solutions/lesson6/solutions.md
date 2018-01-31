@@ -373,6 +373,20 @@ box.addEventListener('click', () => {
 
 ## 6.6 Animating the off-canvas menu
 
+_Only the transition property needs to be added the 2 container 
+CSS classes._
+
+```CSS
+.site-container {
+	transition: transform 0.5s ease-out;
+
+}
+
+.offsite-container {
+	transition: transform 0.5s ease-out;
+}
+```
+
 [Back to top](#lesson-6-solutions)
 
 <!-- Solutions above only -->
