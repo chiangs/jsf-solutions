@@ -9,6 +9,8 @@
 	- [6.2 CSS Animations](#62-css-animations)
 	- [6.5 Greensock API](#65-greensock-api)
 	- [6.6 Animating the off-canvas menu](#66-animating-the-off-canvas-menu)
+	- [6.7 Animating the modal window](#67-animating-the-modal-window)
+	- [6.8 Animating the accordion](#68-animating-the-accordion)
 	- [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -373,21 +375,96 @@ box.addEventListener('click', () => {
 
 ## 6.6 Animating the off-canvas menu
 
+[Back to top](#lesson-6-solutions)
+
 _Only the transition property needs to be added the 2 container 
 CSS classes._
 
 ```CSS
 .site-container {
-	transition: transform 0.5s ease-out;
+	transition: transform 0.3s ease-out;
 
 }
 
 .offsite-container {
-	transition: transform 0.5s ease-out;
+	transition: transform 0.3s ease-out;
 }
 ```
 
+## 6.7 Animating the modal window
+
 [Back to top](#lesson-6-solutions)
+
+```html
+<!-- Add the point-hand and wave-hand classes to the right SVGs -->
+```
+
+```css
+/* write animations and add them to the right classes, refactor to minimize re-declaring the same class several times */
+/* Pointing hand */
+@keyframes point {
+	0% {
+		transform: translateY(3em);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.point-hand {
+	animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* zooming hand */
+@keyframes zoom {
+	0% {
+		transform: scale(0.25);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* Waving hand */
+@keyframes wave {
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+
+	20%,
+	60% {
+		transform: rotate(15deg);
+	}
+
+	40%,
+	80% {
+		transform: rotate(-15deg);
+	}
+}
+
+.wave-hand {
+	transform-origin: bottom center;
+	animation: zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	animation: wave 1s ease-in-out;
+	animation-play-state: paused;
+}
+
+.modal-is-open .wave-hand {
+	animation-play-state: running;
+}
+```
+
+## 6.8 Animating the accordion
+
+[Back to top](#lesson-6-solutions)
+
 
 <!-- Solutions above only -->
 
