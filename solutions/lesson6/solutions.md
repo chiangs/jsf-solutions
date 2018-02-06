@@ -7,10 +7,10 @@
 - [Lesson 6 Solutions](#lesson-6-solutions)
 	- [6.1 CSS Transitions](#61-css-transitions)
 	- [6.2 CSS Animations](#62-css-animations)
-	- [6.5 Greensock API](#65-greensock-api)
-	- [6.6 Animating the off-canvas menu](#66-animating-the-off-canvas-menu)
-	- [6.7 Animating the modal window](#67-animating-the-modal-window)
-	- [6.8 Animating the accordion](#68-animating-the-accordion)
+	- [6.8 Greensock API](#68-greensock-api)
+	- [6.9 Animating the off-canvas menu](#69-animating-the-off-canvas-menu)
+	- [6.10 Animating the modal window](#610-animating-the-modal-window)
+	- [6.11 Animating the accordion](#611-animating-the-accordion)
 	- [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -281,7 +281,7 @@ _Using the example HTML & CSS, modify the animation to match a heartbeat graph_
 }
 ```
 
-## 6.5 Greensock API
+## 6.8 Greensock API
 
 [Back to top](#lesson-6-solutions)
 
@@ -373,7 +373,7 @@ box.addEventListener('click', () => {
 });
 ```
 
-## 6.6 Animating the off-canvas menu
+## 6.9 Animating the off-canvas menu
 
 [Back to top](#lesson-6-solutions)
 
@@ -391,7 +391,7 @@ CSS classes._
 }
 ```
 
-## 6.7 Animating the modal window
+## 6.10 Animating the modal window
 
 [Back to top](#lesson-6-solutions)
 
@@ -461,10 +461,70 @@ CSS classes._
 }
 ```
 
-## 6.8 Animating the accordion
+## 6.11 Animating the accordion
 
 [Back to top](#lesson-6-solutions)
 
+```html
+<!-- Added accordiong__inner div and a jsAccordion class to each content area -->
+<!-- Accordion content and header then... -->
+<div class="accordion__content jsAccordionContent">
+	<div class="accordion__inner">
+		<svg>
+			<use xlink:href="images/sprite.svg#cheese" />
+		</svg>
+		<p>Cheese is a food derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation
+		of the milk protein casein.</p>
+	</div>
+</div>
+```
+```css
+.accordion__content {
+	height: 0;
+	transition: height 0.35s ease-out;
+}
+
+.accordion__content.accordion__inner {
+	grid-row-gap: 1rem;
+	padding-right: 3em;
+	padding-bottom: 1.5em;
+	padding-left: 3em;
+}
+
+.accordion.is-open .accordion__content .accordion__inner {
+	display: grid;
+}
+
+@media screen and (min-width: 700px) {
+	.accordion__content .accordion__inner {
+		grid-template-columns: 7.5em 1fr;
+		grid-column-gap: 2rem;
+		align-items: center;
+	}
+}
+```
+```js
+// If the event item is not a header then return out and do nothing
+// otherwise select the class list, the content and height and assign to a variable
+// for easy reuse.
+// Use ternary to set height if it has the open class or not then finally toggle
+// the is-open class
+accordion.addEventListener('click', e => {
+	const accordionHeader = e.target.closest('.jsAccordionHeader');
+
+	if (!accordionHeader) return;
+
+	const accordionClassList = accordionHeader.parentNode.classList;
+	const content = accordionHeader.nextElementSibling;
+	const height = content.firstElementChild.getBoundingClientRect().height;
+
+	accordionClassList.contains('is-open')
+		? (content.style.height = '0px')
+		: (content.style.height = height + 'px');
+
+	accordionClassList.toggle('is-open');
+});
+```
 
 <!-- Solutions above only -->
 
