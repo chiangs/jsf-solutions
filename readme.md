@@ -28,7 +28,7 @@ The following information should be included as a minimum.
 3. [Lesson 3](solutions/lesson3/solutions.md) - Complete
 4. [Lesson 4](solutions/lesson4/solutions.md) - Complete
 5. [Lesson 5](solutions/lesson5/solutions.md) - Complete
-6. [Lesson 6](solutions/lesson6/solutions.md)
+6. [Lesson 6](solutions/lesson6/solutions.md) - Complete
 7. [Lesson 7](solutions/lesson7/solutions.md)
 8. [Lesson 8](solutions/lesson8/solutions.md)
 
@@ -45,3 +45,4 @@ The following information should be included as a minimum.
 | Lesson 4            | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 4.4          | [@chiangs](https://github.com/chiangs), [@lampyr69](https://github.com/lampyr69) |
 | Lesson 5            | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 6            | [@chiangs](https://github.com/chiangs)                                           |
