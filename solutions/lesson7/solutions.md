@@ -84,6 +84,25 @@ function simplePipe (fn1, fn2) {
 
 [Back to top](#lesson-7-solutions)
 
+```js
+const people = [
+  { firstName: 'Benjamin', lastName: 'Franklin', yearBorn: 1706, yearOfDeath: 1790 },
+  { firstName: 'Thomas', lastName: 'Edison', yearBorn: 1847, yearOfDeath: 1931 },
+  { firstName: 'Franklin', lastName: 'Roosevelt', yearBorn: 1882, yearOfDeath: 1945 },
+  { firstName: 'Napolean', lastName: 'Bonaparte', yearBorn: 1830, yearOfDeath: 1821 },
+  { firstName: 'Abraham', lastName: 'Lincoln', yearBorn: 1809, yearOfDeath: 1865 },
+  { firstName: 'Mahatma', lastName: 'Gandhi', yearBorn: 1869, yearOfDeath: 1948 },
+  { firstName: 'Winston', lastName: 'Churchill', yearBorn: 1874, yearOfDeath: 1965 },
+  { firstName: 'Charles', lastName: 'Darwin', yearBorn: 1809, yearOfDeath: 1882 },
+  { firstName: 'Albert', lastName: 'Einstein', yearBorn: 1879, yearOfDeath: 1955 },
+  { firstName: 'Pablo', lastName: 'Picasso', yearBorn: 1881, yearOfDeath: 1973 },
+  { firstName: 'Ludwig', lastName: 'Beethoven', yearBorn: 1770, yearOfDeath: 1827 },
+  { firstName: 'Walt', lastName: 'Disney', yearBorn: 1901, yearOfDeath: 1966 },
+  { firstName: 'Henry', lastName: 'Ford', yearBorn: 1863, yearOfDeath: 1947 },
+  { firstName: 'Steve', lastName: 'Jobs', yearBorn: 1955, yearOfDeath: 2012 }
+]
+```
+
 * ***Find the index of Thomas Edison.***
 
 ```js
@@ -121,28 +140,42 @@ const between1850n1900 = people.filter(person => person.yearOfDeath > 1850 && pe
 * ***Create an array that contains the firstName, lastName and yearsLived for each person (where yearsLived is the number of years the person lived).***
 
 ```js
+const namesAndYears = people.map(person => ({
+    firstName: person.firstName,
+    lastName: person.lastName,
+    yearsLived: person.yearOfDeath - person.yearBorn
+    })
+)
+// We are creating a new object array for each person that consists of firstName, lastName, and a new property 
+// yearsLived. So we have to define them in the javascript object to be created for each person and the
+// syntax for creating a js object is { key: value }
+// so we need to creat a new array of objects like this: 
+// const objectArray = [
+//     { key1: value1, key2: value2, key3: value3 }, <= object1
+//     { key1: value1, key2: value2, key3: value3 }, <= object2
+//     { key1: value1, key2: value2, key3: value3 } <= object3
+// ]
 ```
 
 * ***Get the total number of yearsLived of the people who were alive between 1750 and 1900.***
 
 ```js
-const people = [
-  { firstName: 'Benjamin', lastName: 'Franklin', yearBorn: 1706, yearOfDeath: 1790 },
-  { firstName: 'Thomas', lastName: 'Edison', yearBorn: 1847, yearOfDeath: 1931 },
-  { firstName: 'Franklin', lastName: 'Roosevelt', yearBorn: 1882, yearOfDeath: 1945 },
-  { firstName: 'Napolean', lastName: 'Bonaparte', yearBorn: 1830, yearOfDeath: 1821 },
-  { firstName: 'Abraham', lastName: 'Lincoln', yearBorn: 1809, yearOfDeath: 1865 },
-  { firstName: 'Mahatma', lastName: 'Gandhi', yearBorn: 1869, yearOfDeath: 1948 },
-  { firstName: 'Winston', lastName: 'Churchill', yearBorn: 1874, yearOfDeath: 1965 },
-  { firstName: 'Charles', lastName: 'Darwin', yearBorn: 1809, yearOfDeath: 1882 },
-  { firstName: 'Albert', lastName: 'Einstein', yearBorn: 1879, yearOfDeath: 1955 },
-  { firstName: 'Pablo', lastName: 'Picasso', yearBorn: 1881, yearOfDeath: 1973 },
-  { firstName: 'Ludwig', lastName: 'Beethoven', yearBorn: 1770, yearOfDeath: 1827 },
-  { firstName: 'Walt', lastName: 'Disney', yearBorn: 1901, yearOfDeath: 1966 },
-  { firstName: 'Henry', lastName: 'Ford', yearBorn: 1863, yearOfDeath: 1947 },
-  { firstName: 'Steve', lastName: 'Jobs', yearBorn: 1955, yearOfDeath: 2012 }
-]
+// Get array of people objects alive in time window
+const between1750n1900 = people.filter(person => person.yearOfDeath > 1750 && person.yearOfDeath < 1900)
+
+// Map the years alive for each person object
+const yearsAlive = between1750n1900.map(person => person.yearOfDeath - person.yearBorn)
+
+// Reduce the yearsAlive to a single number
+const totalYrsLived = yearsAlive.reduce((acc, num) => acc + num, 0)
+
+// 261 because at the time of this writing, Napoleon was alive -9 yrs
+
+// BONUS: do it all at once and pass in the range:
+
 ```
+
+
 
 <!-- Solutions above only -->
 
