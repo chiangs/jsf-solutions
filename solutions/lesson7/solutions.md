@@ -234,9 +234,21 @@ console.log(title) //This is 💩
 * ***Rename the title of the first post to content while you destructure.***
 
 ```js
+const { title: content } = firstItem
+
+console.log(content) // This is 💩
 ```
 
 * ***Create a description variable and provide it with a default value Nothing is better than leaving the description empty.***
+
+```js
+const {
+  description = `Most awesome JavaScript course ever!`
+} = firstItem
+
+// firstItem.description = description
+// console.log firstItem.description returns `Most awesome JavaScript course ever!`
+```
 
 
 <!-- Solutions above only -->
