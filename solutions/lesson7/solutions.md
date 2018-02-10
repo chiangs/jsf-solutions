@@ -180,18 +180,14 @@ const totalYearsLived = ((array, minYear, maxYear) => {
 })
 
 // BONUS2: just a single reduce
-const totalYearsLived2 = ((array, minYear, maxYear) => {
-    return array.reduce((sum, item) => {
-    let yearOfDeath = item.yearOfDeath
-    let yearBorn = item.yearBorn
-    (yearBorn < 1900 && yearOfDeath > 1750 )
-        ? (sum + (yearOfDeath - yearBorn))
+const totalYearsLived = ((array, minYear, maxYear) => 
+    array.reduce((sum, person) => 
+    person.yearBorn < maxYear && person.yearOfDeath > minYear
+        ? sum + person.yearOfDeath - person.yearBorn
         : sum
-    }), 0
-})
+    , 0))
 
-// totalYearsLived(people, 1750, 1900) 
-// returns 830
+// totalYearsLived(people,1750,1900) = 830
 ```
 
 ## 7.9 Destructuring
