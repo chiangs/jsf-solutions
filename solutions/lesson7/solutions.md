@@ -9,6 +9,7 @@
     - [7.6 Function composition](#76-function-composition)
     - [7.7 Functional array methods](#77-functional-array-methods)
     - [7.9 Destructuring](#79-destructuring)
+    - [7.10 Rest and spread](#710-rest-and-spread)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -192,7 +193,7 @@ const totalYearsLived = ((array, minYear, maxYear) =>
 
 ## 7.9 Destructuring
 
-[Back to top](#Lesson-7-solutions)
+[Back to top](#lesson-7-solutions)
 
 ```js
 const posts = [
@@ -249,7 +250,81 @@ const {
 // firstItem.description = description
 // console.log firstItem.description returns `Most awesome JavaScript course ever!`
 ```
+## 7.10 Rest and spread
 
+[Back to top](#lesson-7-solutions)
+
+
+* ***Spread an array***
+
+```js
+const array = [ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 ]
+
+console.log(...array)
+//returns 1 2 3 4 5 6 7 8 9 10
+```
+
+
+* ***Spread an array when calling a function***
+ 
+```js
+const array = ['hello', 'hej', 'hei', 'ni hao', 'hola', 'halo']
+
+const showItems = (first, second, third, ...rest) => {
+    console.log(first)
+    console.log(second)
+    console.log(third)
+    console.log(...rest)
+}
+
+showItems(...array)
+
+// hello
+// hej
+// hei
+// ni hao hola halo
+```
+
+
+* ***Concatenate arrays with spread***
+ 
+```js
+const array = [ 'I', 'like', 'to' ]
+
+const array2 = [ 'move it', 'move it' ]
+
+const combined = [ ...array, ...array2 ]
+
+console.log(combined)
+
+// [ "I", "like", "to", "move it", "move it" ]
+```
+
+
+* ***Use the rest operator as a function argument***
+ 
+```js
+const combine = (...args) => {
+    console.log(args, args.length)
+}
+
+combine('I', 'like', 'to', 'move', 'it', 'move', 'it')
+
+// Array [ "I", "like", "to", "move", "it", "move", "it" ]
+// 7
+```
+
+
+* ***Destructure variables with rest.***
+
+```js
+const measurements = [ 34, 23, 34 ]
+
+const [ bust, ...hipsAndWaist ] = measurements
+
+console.log(top) // 34
+console.log(hipsAndWaist) // Array [ 23, 34 ]
+```
 
 <!-- Solutions above only -->
 
