@@ -322,7 +322,7 @@ const measurements = [ 34, 23, 34 ]
 
 const [ bust, ...hipsAndWaist ] = measurements
 
-console.log(top) // 34
+console.log(bust) // 34
 console.log(hipsAndWaist) // Array [ 23, 34 ]
 ```
 
