@@ -10,6 +10,7 @@
     - [8.3 OOP](#83-oop)
     - [8.4 `This`](#84-this)
         - [Important to remember:](#important-to-remember)
+    - [8.5 JavaScript classes](#85-javascript-classes)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -201,6 +202,10 @@ const mermaid = {
   }
 }
 ```
+
+## 8.5 JavaScript classes
+
+[Back to top](#lesson-8-solutions)
 
 <!-- Solutions above only -->
 
