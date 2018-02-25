@@ -11,6 +11,8 @@
     - [8.4 `This`](#84-this)
         - [Important to remember:](#important-to-remember)
     - [8.5 JavaScript classes](#85-javascript-classes)
+    - [8.6 Inheritance](#86-inheritance)
+    - [8.7 Prototypes](#87-prototypes)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -230,6 +232,62 @@ myPizza.toString()
 
 // large pizza with pineapples, bacon
 ```
+
+## 8.6 Inheritance
+
+[Back to top](#lesson-8-solutions)
+
+* ***Create a child class that extends from a parent class.***
+
+```js
+// Parent class
+class Player {
+    constructor(firstName, lastName, score) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.score = score
+    this.showScore = () => console.log(`${firstName} ${lastName}'s score: ${score}`)
+    }
+}
+
+// new instance of Player
+const newPlayer = new Player('player', 'one', 0)
+newPlayer.showScore() // player one's score: 0
+
+// new type of Player
+const cheater = new Player('cheater', 'never-dies', 0)
+cheater.alwaysWins = (score) => console.log(`All I do is win-win-win. , score: ${score}`)
+
+cheater.alwaysWins(99999999999999) // All I do is win-win-win. , score: 99999999999999
+```
+
+* ***Create a child constructor that extends from a parent constructor***
+
+```js
+// Child class
+class Sniper extends Player {
+    constructor(firstName, lastName, score) {
+        super(firstName, lastName, score)
+
+        this.lookThroughScope = () => console.log(`${firstName} ${lastName} looks through scope and shoots. New score: ${score}`)
+    }
+}
+const newSniper = new Sniper('shooter', 'one', 20000)
+newSniper
+// firstName: "shooter"
+// lastName: "one"
+// lookThroughScope: function lookThroughScope()
+// score: 20000
+// showScore: function showScore()
+newSniper.lookThroughScope()
+// shooter one looks through scope and shoots. New score: 20000
+newSniper.showScore()
+// shooter one's score: 20000
+```
+
+## 8.7 Prototypes
+
+[Back to top](#lesson-8-solutions)
 
 
 <!-- Solutions above only -->
