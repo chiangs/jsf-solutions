@@ -207,6 +207,31 @@ const mermaid = {
 
 [Back to top](#lesson-8-solutions)
 
+* ***Create a class with class.***
+
+```js
+class Pizza {
+    constructor(size, veggieTopping, meatTopping) {
+        this.size = size
+        this.veggieTopping = veggieTopping
+        this.meatTopping = meatTopping
+
+        this.toString = () => console.log(`${size} pizza with ${veggieTopping}, ${meatTopping}`)
+    }
+}
+```
+
+* ***Create an instance of your class***
+
+```js
+const myPizza = new Pizza('large', 'pineapples', 'bacon')
+
+myPizza.toString()
+
+// large pizza with pineapples, bacon
+```
+
+
 <!-- Solutions above only -->
 
 ## End of document
