@@ -290,6 +290,111 @@ newSniper.showScore()
 [Back to top](#lesson-8-solutions)
 
 
+* ***Create a new array. Look at what's in the [[Prototype]] chain.***
+
+```js
+const newArray = [1, 2, 3, 4]
+Object.getPrototypeOf(newArray)
+
+// concat: function concat()
+// constructor: function Array()
+// copyWithin: function copyWithin()
+// entries: function entries()
+// every: function every()
+// fill: function fill()
+// filter: function filter()
+// find: function find()
+// findIndex: function findIndex()
+// forEach: function forEach()
+// includes: function includes()
+// indexOf: function indexOf()
+// join: function join()
+// keys: function keys()
+// lastIndexOf: function lastIndexOf()
+// length: 0
+// map: function map()
+// pop: function pop()
+// push: function push()
+// reduce: function reduce()
+// reduceRight: function reduceRight()
+// reverse: function reverse()
+// shift: function shift()
+// slice: function slice()
+// some: function some()
+// sort: function sort()
+// splice: function splice()
+// toLocaleString: function toLocaleString()
+// toSource: function toSource()
+// toString: function toString()
+// unshift: function unshift()
+// Symbol(Symbol.iterator): undefined
+// Symbol(Symbol.unscopables): undefined
+// __proto__: Object { … }
+```
+
+* ***Create a new object. Look at what's in the [[Prototype]] chain.***
+
+```js
+const newObj = {
+    size: 23,
+    shape: 'round',
+    color: 'red'
+}
+
+Object.getPrototypeOf(newArray)
+// __defineGetter__: function __defineGetter__()
+// __defineSetter__: function __defineSetter__()
+// __lookupGetter__: function __lookupGetter__()
+// __lookupSetter__: function __lookupSetter__()
+// constructor: function Object()
+// hasOwnProperty: function hasOwnProperty()
+// isPrototypeOf: function isPrototypeOf()
+// propertyIsEnumerable: function propertyIsEnumerable()
+// toLocaleString: function toLocaleString()
+// toSource: function toSource()
+// toString: function toString()
+// valueOf: function valueOf()
+```
+
+* ***Create a method. Look at what's in the method's [[Prototype]] chain.***
+
+```js
+const method = () => console.log('A method')
+
+Object.getPrototypeOf(method)
+// ()
+// apply: function apply()
+// arguments: null
+// bind: function bind()
+// call: function call()
+// caller: null
+// constructor: function Function()
+// length: 0
+// name: ""
+// toSource: function toSource()
+// toString: function toString()
+// Symbol(Symbol.hasInstance): undefined
+// __proto__: Object { … }
+```
+
+* ***Create a method that lives in a [[Prototype]] with the class syntax. Look at what's in the instance's [[Prototype]] chain.***
+
+```js
+class Machine {
+    constructor(name, material) {
+        this.name = name
+        this.matierial = material
+
+        this.doSomething = () => console.log('Nuts and bolts')
+    }
+}
+
+Object.getPrototypeOf(myMachine)
+// {…}
+// constructor: function Machine()
+// __proto__: Object { … }
+```
+
 <!-- Solutions above only -->
 
 ## End of document
