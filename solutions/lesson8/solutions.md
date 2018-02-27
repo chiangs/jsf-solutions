@@ -13,6 +13,8 @@
     - [8.5 JavaScript classes](#85-javascript-classes)
     - [8.6 Inheritance](#86-inheritance)
     - [8.7 Prototypes](#87-prototypes)
+    - [8.9 Objects instead of Constructors and Classes](#89-objects-instead-of-constructors-and-classes)
+    - [8.10 Composition and Inheritance](#810-composition-and-inheritance)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -394,6 +396,88 @@ Object.getPrototypeOf(myMachine)
 // constructor: function Machine()
 // __proto__: Object { … }
 ```
+
+## 8.9 Objects instead of Constructors and Classes
+
+[Back to top](#lesson-8-solutions)
+
+* ***Create a constructing object***
+
+```js
+const Dog = {
+    init (name, breed) {
+        this.name = name
+        this.breed = breed
+    },
+    speak() {
+        console.log(`woof woof says ${this.name} the ${this.breed}`)
+    }
+}
+```
+
+* ***Create an instance with Object.create***
+
+```js
+const newDog = Object.create(Dog)
+newDog.init('Pepper', 'Pitbull')
+newDog.speak() // woof woof says Pepper the Pitbull
+```
+
+* ***Create a child object (like Developer) with Object.create***
+
+```js
+const YappyBreed = Object.create(Dog)
+```
+
+* ***Add properties and methods to your child object***
+
+```js
+YappyBreed.yappiness = 'Level 200'
+YappyBreed.fetch = (item) => console.log(`Fetching the ${item}`)
+```
+
+* ***Create an instance of the child object.***
+
+```js
+YappyBreed.init = (name, breed) => {
+  Dog.init(name, breed)
+  this.size = 'Small'
+}
+
+const balto = Object.create(YappyBreed)
+balto.init('Balto', 'Norbottenspits')
+```
+
+* ***console.log both parent and child instances. Pay attention to the [[Prototype]] chain.***
+
+```js
+console.log(newDog)
+// {…}
+// breed: "Pitbull"
+// name: "Pepper"
+// __proto__: {…}
+// init: function init()
+// speak: function speak()
+// __proto__: Object { … }
+
+console.log(balto)
+// {}
+// __proto__: {…}
+// fetch: function fetch()
+// init: function init()
+// yappiness: "Level 200"
+// __proto__: {…}
+// breed: "Norbottenspits"
+// init: function init()
+// name: "Balto"
+// speak: function speak()
+// __proto__: Object { … }
+```
+
+## 8.10 Composition and Inheritance
+
+[Back top top](#lesson-8-solutions)
+
 
 <!-- Solutions above only -->
 
