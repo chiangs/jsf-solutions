@@ -16,6 +16,7 @@
     - [8.9 Objects instead of Constructors and Classes](#89-objects-instead-of-constructors-and-classes)
     - [8.10 Composition and Inheritance](#810-composition-and-inheritance)
     - [8.11 Private variables](#811-private-variables)
+    - [8.12 Call, bind, & apply](#812-call-bind-apply)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -555,27 +556,63 @@ Ostrich.swim() // I can't swim
 [Back top top](#lesson-8-solutions)
 
 * ***Create a private variable with the Object.create syntax.***
-
-```js
-```
-
-
 * ***Create a privileged method with the Object.create syntax***
 
 ```js
-```
+const Car = {
+    init(name, year, color) {
+        this.name = name
+        this.year = year
+    
+        // privileged variable = color
+        console.log('color is ', color)
 
+        // privileged method
+        this.sayDetails = () => console.log(`I am a ${this.year} ${color} ${this.name}`)
+    }
+}
+
+Car.init('Ferrari', 2018, 'Yellow') // color is  Yellow
+Car.sayDetails() // I am a 2018 Yellow Ferrari
+```
 
 * ***Do the same with a Class syntax***
 
 ```js
+class Car {
+    constructor(name, year, color) {
+        this.name = name
+        this.year = year
+
+        console.log('color is', color)
+
+        this.sayDetails = () => console.log(`I am a ${this.year} ${color} ${this.name}`)
+    }
+}
+const newCar = new Car('Ferrari', 2018, 'Red') // color is Red
+newCar.sayDetails() // I am a 2018 Red Ferrari
 ```
 
 
 * ***Do the same with a Constructor syntax***
 
 ```js
+function Car(name, year, color) {
+    this.name = name
+    this.year = year
+    console.log('color is', color)
+
+    this.sayDetails = () => console.log(`I am a ${this.year} ${color} ${this.name}`)
+}
+const newCar = new Car('Ferrari', 2018, 'Red') // color is Red
+newCar.sayDetails() // I am a 2018 Red Ferrari
 ```
+
+## 8.12 Call, bind, & apply
+
+[Back to top](#lesson-8-solutions)
+
+***No exercises!***
 
 <!-- Solutions above only -->
 
