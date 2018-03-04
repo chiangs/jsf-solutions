@@ -17,6 +17,8 @@
     - [8.10 Composition and Inheritance](#810-composition-and-inheritance)
     - [8.11 Private variables](#811-private-variables)
     - [8.12 Call, bind, & apply](#812-call-bind-apply)
+        - [Should you use call, bind or apply?](#should-you-use-call-bind-or-apply)
+        - [Wrapping up](#wrapping-up)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -613,6 +615,17 @@ newCar.sayDetails() // I am a 2018 Red Ferrari
 [Back to top](#lesson-8-solutions)
 
 ***No exercises!***
+### Should you use call, bind or apply?
+
+Although many JavaScript experts like to use `call`, `bind` and `apply`, I discourage you from using it because code written with them are much harder to understand compared to the versions written without these functions.
+
+*Try to avoid call, bind, apply unless you really need them.*
+
+### Wrapping up
+
+`call`, `bind` and `apply` are functions that lets you change the `this` context in JavaScript. In addition to changing the `this` context, all three functions let you borrow methods from other functions.
+
+The difference between `call` and `bind` is `call` invokes the called function **immediately** while `bind` returns the function with parameters you gave it, **allowing you to call the new function at a later time**.
 
 <!-- Solutions above only -->
 

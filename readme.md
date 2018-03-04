@@ -30,7 +30,8 @@ The following information should be included as a minimum.
 5. [Lesson 5](solutions/lesson5/solutions.md) - Complete
 6. [Lesson 6](solutions/lesson6/solutions.md) - Complete
 7. [Lesson 7](solutions/lesson7/solutions.md) - Complete
-8. [Lesson 8](solutions/lesson8/solutions.md) - 
+8. [Lesson 8](solutions/lesson8/solutions.md) - Complete
+9. [Lesson 9](solutions/lesson9/solutions.md) - In progress
 
 ## Contributors
 
