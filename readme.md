@@ -30,7 +30,7 @@ The following information should be included as a minimum.
 5. [Lesson 5](solutions/lesson5/solutions.md) - Complete
 6. [Lesson 6](solutions/lesson6/solutions.md) - Complete
 7. [Lesson 7](solutions/lesson7/solutions.md) - Complete
-8. [Lesson 8](solutions/lesson8/solutions.md)
+8. [Lesson 8](solutions/lesson8/solutions.md) - 
 
 ## Contributors
 
@@ -47,3 +47,4 @@ The following information should be included as a minimum.
 | Lesson 5            | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 6            | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 7            | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 8            | [@chiangs](https://github.com/chiangs)                                           |

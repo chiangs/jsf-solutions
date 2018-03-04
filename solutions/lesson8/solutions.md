@@ -15,6 +15,7 @@
     - [8.7 Prototypes](#87-prototypes)
     - [8.9 Objects instead of Constructors and Classes](#89-objects-instead-of-constructors-and-classes)
     - [8.10 Composition and Inheritance](#810-composition-and-inheritance)
+    - [8.11 Private variables](#811-private-variables)
     - [End of document](#end-of-document)
 
 <!-- /TOC -->
@@ -478,6 +479,103 @@ console.log(balto)
 
 [Back top top](#lesson-8-solutions)
 
+* ***Create three skills—swim, fly and run.***
+
+```js
+const skills = {
+  swim () {
+    console.log('I can swim!')
+  },
+  fly() {
+    console.log('I can fly!')
+  },
+  run() {
+    console.log('I can run!')
+  }
+}
+```
+
+* ***Create a Bird object. Note that all birds have wings and feathers, but not all birds fly.***
+
+```js
+// Added default values for the fly, swim, run skills as an option, but could be left out of the Bird object.
+const Bird = {
+    init(name, noise) {
+        this.name = name
+        this.noise = noise
+    },
+    feathers: true,
+    wings: true,
+    fly() {
+        console.log(`I can't fly`)
+    },
+    swim() {
+        console.log(`I can't swim`)
+    },
+    run() {
+        console.log(`I can't run`)
+    },
+    makeSound() {
+        console.log(`I am a ${this.name}, and I go ${this.noise}`)
+    }
+}
+```
+
+* ***Create a Sparrow. A sparrow should be able to fly.***
+
+```js
+const Sparrow = Object.create(Bird)
+Object.assign(Sparrow, { fly: skills.fly })
+Sparrow.fly() // 'I can fly!'
+```
+
+* ***Create a Duck. A duck should be able to fly and swim.***
+
+```js
+const Duck = Object.create(Bird)
+Object.assign(Duck, { fly: skills.fly, swim: skills.swim })
+Duck.init('Duck', 'Quack quack!')
+Duck.makeSound() // I am a Duck, and I go Quack quack!
+Duck.fly() // I can fly!
+Duck.swim() // I can swim!
+Duck.run() // I can't run
+```
+
+* ***Create an Ostrich. An ostrich can run, but cannot fly or swim.***
+
+```js
+const Ostrich = Object.create(Bird)
+Object.assign(Ostrich, { run: skills.run })
+Ostrich.run() // I can run!
+Ostrich.swim() // I can't swim
+```
+
+## 8.11 Private variables
+
+[Back top top](#lesson-8-solutions)
+
+* ***Create a private variable with the Object.create syntax.***
+
+```js
+```
+
+
+* ***Create a privileged method with the Object.create syntax***
+
+```js
+```
+
+
+* ***Do the same with a Class syntax***
+
+```js
+```
+
+
+* ***Do the same with a Constructor syntax***
+
+```js
+```
 
 <!-- Solutions above only -->
 
