@@ -10,28 +10,27 @@ All students are welcome to contribute solutions or request examples. This is a 
 
 To make a contribution, please make a [pull request](https://help.github.com/articles/creating-a-pull-request/).
 
-**_Please do NOT merge them yourself_**.
-
 The following information should be included as a minimum.
 
-1. Lesson and question the solution / example addresses.
-2. Explanation (spell and grammar checked) of your code.
-3. Line comments where needed.
-4. Screenshots if appropriate.
-
-**_I'm currently moving from Denmark to Norway so merges will be delayed_**
+1.  Lesson and question the solution / example addresses.
+2.  Explanation (spell and grammar checked) of your code.
+3.  Line comments where needed.
+4.  Screenshots if appropriate.
 
 ## Contents and navigation
 
-1. [Lesson 1](solutions/lesson1/solutions.md) - No exercises
-2. [Lesson 2](solutions/lesson2/solutions.md) - Complete
-3. [Lesson 3](solutions/lesson3/solutions.md) - Complete
-4. [Lesson 4](solutions/lesson4/solutions.md) - Complete
-5. [Lesson 5](solutions/lesson5/solutions.md) - Complete
-6. [Lesson 6](solutions/lesson6/solutions.md) - Complete
-7. [Lesson 7](solutions/lesson7/solutions.md) - Complete
-8. [Lesson 8](solutions/lesson8/solutions.md) - Complete
-9. [Lesson 9](solutions/lesson9/solutions.md) - In progress
+**_This is before the order and format changed_**
+_Lesson 9 is now Lesson 7 and following that will match up with the new format_
+
+1.  [Lesson 1](solutions/lesson1/solutions.md) - No exercises
+2.  [Lesson 2](solutions/lesson2/solutions.md) - Complete
+3.  [Lesson 3](solutions/lesson3/solutions.md) - Complete
+4.  [Lesson 4](solutions/lesson4/solutions.md) - Complete
+5.  [Lesson 5](solutions/lesson5/solutions.md) - Complete
+6.  [Lesson 6](solutions/lesson6/solutions.md) - Complete
+7.  [Lesson 7](solutions/lesson7/solutions.md) - Complete
+8.  [Lesson 8](solutions/lesson8/solutions.md) - Complete
+9.  [Lesson 9 aka Lesson 7: Text and Content](solutions/lesson9/solutions.md) - In progress
 
 ## Contributors
 
@@ -49,3 +48,4 @@ The following information should be included as a minimum.
 | Lesson 6            | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 7            | [@chiangs](https://github.com/chiangs)                                           |
 | Lesson 8            | [@chiangs](https://github.com/chiangs)                                           |
+| Lesson 9 aka 7      | [@chiangs](https://github.com/chiangs)                                           |
