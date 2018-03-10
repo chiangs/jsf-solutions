@@ -6,9 +6,9 @@ _Also known as Lesson 7 - Text & Content_
 <!-- TOC -->
 
 - [Lesson 9 Solutions](#lesson-9-solutions)
-    - [9.1 Changing Text and HTML](#91-changing-text-and-html)
-    - [9.2 Creating HTML Elements with JavaScript](#92-creating-html-elements-with-javascript)
-    - [End of document](#end-of-document)
+  - [9.1 Changing Text and HTML](#91-changing-text-and-html)
+  - [9.2 Creating HTML Elements with JavaScript](#92-creating-html-elements-with-javascript)
+  - [End of document](#end-of-document)
 
 <!-- /TOC -->
 <!-- Solutions below only -->
