@@ -1,21 +1,8 @@
 # JSF-Solutions
 
+***This repo is now being archived and no longer maintained.***
+
 This is the public repo for students who wish to contribute solutions and examples to lessons from [Learn JavaScript with Zell](https://learnjavascript.today/).
-
-If you need assistance in regards to this repo or want to be added on the contributor's list, you can contact me: [stephen.e.chiang@gmail.com](mailto:stephen.e.chiang@gmail.com) -or- @Stephen on Zell's Slack channel.
-
-## Rules and procedure for contributing
-
-All students are welcome to contribute solutions or request examples. This is a great way to get comfortable with markdown, Git and also learning how to write good examples, explanations, and quality comments.
-
-To make a contribution, please make a [pull request](https://help.github.com/articles/creating-a-pull-request/).
-
-The following information should be included as a minimum.
-
-1.  Lesson and question the solution / example addresses.
-2.  Explanation (spell and grammar checked) of your code.
-3.  Line comments where needed.
-4.  Screenshots if appropriate.
 
 ## Contents and navigation
 
